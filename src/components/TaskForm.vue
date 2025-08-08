@@ -1,12 +1,12 @@
 <template>
-    <form @submit.prevent="handleSubmit" class="space-y-4 p-6 rounded-lg bg-card shadow">
+    <form @submit.prevent="handleSubmit" class="form space-y-4 p-6 rounded-lg bg-card shadow">
       <div>
         <label class="block font-medium mb-1">Título</label>
         <input v-model="title" type="text" class="w-full px-4 py-2 border rounded focus:outline-none" required />
       </div>
       <div>
         <label class="block font-medium mb-1">Descripción</label>
-        <textarea v-model="description" class="w-full px-4 py-2 border rounded focus:outline-none" rows="3" required />
+        <textarea v-model="description" class="textarea w-full px-4 py-2 border rounded focus:outline-none" rows="3" required />
       </div>
        <button type="submit" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-700">
         {{ isEditing ? 'Actualizar Tarea' : 'Agregar Tarea' }}
@@ -59,3 +59,13 @@
     }
   }
 </script>
+
+<style scoped>
+  .textarea {
+    resize: none;
+  }
+
+  .form {
+    width: 24rem;
+  }
+</style>  
